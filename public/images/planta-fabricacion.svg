@@ -1,0 +1,9 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="700" fill="#262C37"/>
+  <rect x="90" y="100" width="1020" height="500" rx="12" fill="#3A4250"/>
+  <rect x="140" y="170" width="300" height="330" rx="8" fill="#6D7687"/>
+  <rect x="480" y="170" width="270" height="150" rx="8" fill="#5D98F5"/>
+  <rect x="780" y="170" width="270" height="150" rx="8" fill="#5D98F5"/>
+  <rect x="480" y="350" width="570" height="150" rx="8" fill="#4F5868"/>
+  <text x="150" y="220" fill="#F4F5F7" font-size="30" font-family="Arial">FABRICACION PROPIA</text>
+</svg>
