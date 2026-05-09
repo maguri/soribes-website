@@ -1,6 +1,5 @@
 import { useEffect } from "react";
-
-const SITE_URL = "https://www.soribes.com";
+import { companyData } from "../data/companyData";
 
 function upsertMeta(selector, attr, value) {
   let tag = document.head.querySelector(selector);
@@ -11,11 +10,13 @@ function upsertMeta(selector, attr, value) {
   tag.setAttribute(attr, value);
 }
 
-export default function Seo({ title, description, path = "/", image = "/images/og-industrial.svg" }) {
+export default function Seo({ title, description, path = "/", image }) {
+  const ogImage = image ?? companyData.ogImage;
+
   useEffect(() => {
-    const fullTitle = `${title} | SORIBES`;
-    const canonical = `${SITE_URL}${path}`;
-    const imageUrl = `${SITE_URL}${image}`;
+    const fullTitle = `${title} | ${companyData.seoBrandSuffix}`;
+    const canonical = `${companyData.siteUrl}${path}`;
+    const imageUrl = ogImage.startsWith("http") ? ogImage : `${companyData.siteUrl}${ogImage}`;
 
     document.title = fullTitle;
 
@@ -50,7 +51,7 @@ export default function Seo({ title, description, path = "/", image = "/images/o
       document.head.appendChild(canonicalTag);
     }
     canonicalTag.setAttribute("href", canonical);
-  }, [title, description, path, image]);
+  }, [title, description, path, ogImage]);
 
   return null;
 }

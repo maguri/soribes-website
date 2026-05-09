@@ -1,33 +1,35 @@
 import SectionTitle from "../components/SectionTitle";
 import Seo from "../components/Seo";
+import { companyData } from "../data/companyData";
 
 const services = [
-  "Mantenimiento preventivo planificado",
-  "Asistencia correctiva urgente",
+  "Mantenimiento preventivo planificado para basculas puente y plataformas",
+  "Asistencia correctiva y sustitucion de componentes Bilanciai",
   "Calibracion y verificacion metrologica",
-  "Sustitucion de componentes y modernizacion de equipos",
-  "Formacion tecnica para operarios y responsables de planta"
+  "Diagnostico remoto y en terminal DD700 para celulas digitales",
+  "Formacion de operadores y responsables de planta"
 ];
 
 export default function ServicioTecnicoPage() {
   return (
     <section className="section-container">
       <Seo
-        title="Servicio tecnico de basculas industriales"
-        description="Soporte tecnico especializado para basculas industriales: mantenimiento, calibracion, reparacion y mejora de equipos."
+        title="Servicio tecnico Bilanciai Dastions"
+        description="Mantenimiento, calibracion y soporte para celulas CPD-M, basculas SBP/M-SB, BP-3103H y terminales DD700."
         path="/servicio-tecnico"
       />
       <SectionTitle
         eyebrow="Servicio tecnico"
-        title="Disponibilidad, rapidez y fiabilidad postventa"
-        description="Nuestro equipo tecnico trabaja con protocolos de intervencion, repuestos originales y enfoque preventivo."
+        title="Soporte para todo el sistema de pesaje"
+        description={`Equipo tecnico coordinado con ${companyData.legalName}. Protocolos de intervencion, repuestos y actualizaciones segun documentacion del fabricante.`}
       />
 
       <div className="mt-10 grid gap-8 lg:grid-cols-2">
         <article className="rounded-lg border border-steel-300 bg-white p-6">
-          <h3 className="text-xl font-semibold">Cobertura y tiempos de respuesta</h3>
+          <h2 className="text-xl font-semibold">Cobertura y alcance</h2>
           <p className="mt-3 text-sm text-steel-600">
-            Atendemos incidencias en todo el territorio nacional con red tecnica especializada y coordinacion centralizada.
+            Atendemos incidencias y revisiones en todo el territorio nacional, con especial foco en continuidad de
+            servicio en pesaje de flotas y centros logisticos.
           </p>
           <ul className="mt-4 space-y-2 text-sm text-steel-700">
             {services.map((service) => (
@@ -37,13 +39,14 @@ export default function ServicioTecnicoPage() {
         </article>
         <article className="rounded-lg border border-steel-300 bg-white p-6">
           <img
-            src="/images/servicio-tecnico.svg"
-            alt="Tecnico calibrando una bascula industrial"
+            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80"
+            alt="Tecnico en planta - placeholder Unsplash"
             className="h-56 w-full rounded-md object-cover"
+            loading="lazy"
           />
           <p className="mt-4 text-sm text-steel-600">
-            Tambien ofrecemos contratos de mantenimiento para reducir paradas no planificadas y mejorar la vida util de
-            los equipos.
+            Contratos de mantenimiento disponibles para reducir paradas no planificadas y alargar la vida util de
+            celulas y electronica de pesaje.
           </p>
         </article>
       </div>

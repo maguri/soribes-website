@@ -1,38 +1,51 @@
 import SectionTitle from "../components/SectionTitle";
 import Seo from "../components/Seo";
+import empresaPhoto from "../assets/img/bascula-2019.png?url";
 import { companyData } from "../data/companyData";
 
 const milestones = [
-  { year: "1962", text: "Inicio de actividad en soluciones de pesaje mecanico para industria local." },
-  { year: "1988", text: "Modernizacion de fabrica y transicion a sistemas electronicos de alta precision." },
-  { year: "2006", text: "Expansion de servicio tecnico y cobertura en toda la peninsula." },
-  { year: "2022", text: "Digitalizacion de equipos con conectividad e integracion de datos." }
+  {
+    year: "1997",
+    text: "Linea CPD-M: referencia en celulas digitales Bilanciai con diagnostico integrado y proteccion IP68/IP69K."
+  },
+  {
+    year: "2000s",
+    text: "Consolidacion de basculas puente modulares SBP/M-SB para instalaciones empotradas y elevadas en logistica y obra."
+  },
+  {
+    year: "2010s",
+    text: "Despliegue de soluciones sobresuelo BP-3103H con obra civil optimizada (6 apoyos, rampas 280 mm)."
+  },
+  {
+    year: "Actualidad",
+    text: "Terminales DD700 multicanal, conectividad industrial y soporte para proyectos ATEX y multirange."
+  }
 ];
 
 export default function EmpresaPage() {
   return (
     <section className="section-container">
       <Seo
-        title="Empresa industrial de pesaje"
-        description="Conoce la trayectoria de SORIBES: empresa fabricante de basculas industriales con mas de seis decadas de experiencia."
+        title="Dastions, distribuidor Bilanciai en Espana"
+        description="Digital Applications Solutions: distribucion oficial Bilanciai Group, ingenieria de aplicacion y soporte para pesaje de vehiculos y plataformas."
         path="/empresa"
       />
       <SectionTitle
         eyebrow="Empresa"
-        title="Tradicion industrial con vision de futuro"
-        description="Somos una empresa especializada en pesaje industrial con produccion propia, oficina tecnica y orientacion total al cliente B2B."
+        title="Digital Applications Solutions"
+        description={`${companyData.legalName} actua como distribuidor oficial Bilanciai Group en Espana, con foco en pesaje de flotas, logistica y entornos industriales.`}
       />
 
       <div className="mt-10 grid gap-8 lg:grid-cols-2">
         <article className="rounded-lg border border-steel-300 bg-white p-6">
-          <h3 className="text-xl font-semibold">Nuestra trayectoria</h3>
+          <h2 className="text-xl font-semibold">Trayectoria y alianza Bilanciai</h2>
           <p className="mt-3 text-sm text-steel-600">
-            Desde {companyData.founded}, acompanamos a fabricantes, operadores logisticos y companias de distribucion en
-            la mejora de sus procesos de control de peso y trazabilidad.
+            Acompanamos a constructoras, plantas de residuos, puertos, industria y aridos con equipos homologados y
+            documentacion metrologica alineada con OIML R-60, CE y NTEP segun version de producto.
           </p>
           <div className="mt-6 space-y-3">
             {milestones.map((milestone) => (
-              <div key={milestone.year} className="rounded-md border border-steel-200 bg-steel-100 p-3">
+              <div key={milestone.year} className="rounded-md border border-steel-200 bg-steel-50 p-3">
                 <p className="text-sm font-semibold text-industrial-700">{milestone.year}</p>
                 <p className="text-sm text-steel-700">{milestone.text}</p>
               </div>
@@ -41,18 +54,18 @@ export default function EmpresaPage() {
         </article>
 
         <article className="rounded-lg border border-steel-300 bg-white p-6">
-          <h3 className="text-xl font-semibold">Capacidades internas</h3>
+          <h2 className="text-xl font-semibold">Que aportamos en cada proyecto</h2>
           <ul className="mt-4 space-y-3 text-sm text-steel-700">
-            <li>- Oficina tecnica para proyectos a medida.</li>
-            <li>- Fabricacion metalica y ensamblado electronico.</li>
-            <li>- Verificacion y calibracion metrologica.</li>
-            <li>- Instalacion y puesta en marcha in situ.</li>
-            <li>- Servicio postventa y mantenimiento programado.</li>
+            <li>- Seleccion de celulas CPD-M y configuracion de puente segun trafico y normativa aplicable.</li>
+            <li>- Ingenieria de aplicacion para SBP/M-SB y BP-3103H (cota cero, rampas, accesos).</li>
+            <li>- Terminales DD700 y opciones de comunicacion (serie, USB, Ethernet, fieldbus bajo pedido).</li>
+            <li>- Coordinacion de puesta en marcha, formacion de operadores y mantenimiento.</li>
           </ul>
           <img
-            src="/images/planta-fabricacion.svg"
-            alt="Equipo de fabricacion de basculas industriales"
+            src={empresaPhoto}
+            alt="Bascula industrial para pesaje de vehiculos"
             className="mt-6 h-52 w-full rounded-md object-cover"
+            loading="lazy"
           />
         </article>
       </div>

@@ -6,9 +6,12 @@ export default function Footer() {
     <footer className="border-t border-steel-300 bg-steel-900 text-steel-100">
       <div className="section-container grid gap-10 md:grid-cols-3">
         <div>
-          <h3 className="text-xl font-bold">{companyData.name}</h3>
+          <h3 className="text-xl font-bold">
+            <span className="text-industrial-400">DAS</span>
+            TIONS
+          </h3>
           <p className="mt-2 text-sm text-steel-300">
-            Fabricacion e integracion de soluciones de pesaje industrial para entornos exigentes.
+            {companyData.subtitle}. Sistemas de pesaje Bilanciai para camiones, plataformas y terminales DD700.
           </p>
         </div>
         <div>
@@ -26,7 +29,11 @@ export default function Footer() {
         <div>
           <h4 className="text-sm font-semibold uppercase tracking-wide text-steel-300">Contacto</h4>
           <ul className="mt-3 space-y-2 text-sm text-steel-200">
-            <li>{companyData.address}</li>
+            <li>
+              <a href={companyData.website} target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                {companyData.websiteLabel}
+              </a>
+            </li>
             <li>
               <a href={`tel:${companyData.phone.replace(/\s+/g, "")}`} className="hover:text-white">
                 {companyData.phone}
@@ -40,8 +47,12 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-steel-700 py-4 text-center text-xs text-steel-400">
-        (c) {new Date().getFullYear()} {companyData.legalName}. Todos los derechos reservados.
+      <div className="border-t border-steel-700 px-4 py-6 text-center text-xs text-steel-400">
+        <p>
+          (c) {new Date().getFullYear()} {companyData.legalName}. Distribuidor oficial Bilanciai Group.{" "}
+          {companyData.catalogEdition}.
+        </p>
+        <p className="mt-2">La empresa se reserva el derecho de modificar los productos sin previo aviso.</p>
       </div>
     </footer>
   );

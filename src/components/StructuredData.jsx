@@ -1,5 +1,12 @@
 import { useMemo } from "react";
+import logoImg from "../assets/img/logo.png?url";
 import { companyData } from "../data/companyData";
+
+function siteAbsolute(assetPath) {
+  const base = companyData.siteUrl.replace(/\/$/, "");
+  const path = assetPath.startsWith("/") ? assetPath : `/${assetPath}`;
+  return `${base}${path}`;
+}
 
 export default function StructuredData() {
   const schema = useMemo(
@@ -8,20 +15,18 @@ export default function StructuredData() {
       "@type": "Organization",
       name: companyData.name,
       legalName: companyData.legalName,
-      url: "https://www.soribes.com",
-      logo: "https://www.soribes.com/images/logo-soribes.svg",
-      telephone: companyData.phone,
+      url: companyData.siteUrl,
+      logo: siteAbsolute(logoImg),
+      telephone: companyData.phone.replace(/\s+/g, ""),
       email: companyData.email,
       foundingDate: companyData.founded,
       address: {
         "@type": "PostalAddress",
-        streetAddress: "Calle del Acero 12",
-        addressLocality: "Valencia",
-        postalCode: "46026",
         addressCountry: "ES"
       },
       areaServed: "ES",
-      sameAs: []
+      sameAs: [companyData.website],
+      description: companyData.subtitle
     }),
     []
   );
